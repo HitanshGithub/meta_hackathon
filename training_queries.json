@@ -1,0 +1,1290 @@
+{
+  "few_shot": {
+    "easy": [
+      {
+        "name": "easy_001_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_001"
+      },
+      {
+        "name": "easy_002_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_002"
+      },
+      {
+        "name": "easy_003_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_003"
+      },
+      {
+        "name": "easy_004_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_004"
+      },
+      {
+        "name": "easy_005_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_005"
+      },
+      {
+        "name": "easy_006_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_006"
+      },
+      {
+        "name": "easy_007_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_007"
+      },
+      {
+        "name": "easy_008_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_008"
+      },
+      {
+        "name": "easy_009_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_009"
+      },
+      {
+        "name": "easy_010_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_010"
+      },
+      {
+        "name": "easy_011_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_011"
+      },
+      {
+        "name": "easy_012_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_012"
+      },
+      {
+        "name": "easy_013_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_013"
+      },
+      {
+        "name": "easy_014_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_014"
+      },
+      {
+        "name": "easy_015_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_015"
+      },
+      {
+        "name": "easy_016_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_016"
+      },
+      {
+        "name": "easy_017_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_017"
+      },
+      {
+        "name": "easy_018_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_018"
+      },
+      {
+        "name": "easy_019_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_019"
+      },
+      {
+        "name": "easy_020_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_020"
+      },
+      {
+        "name": "easy_021_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_021"
+      },
+      {
+        "name": "easy_022_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_022"
+      },
+      {
+        "name": "easy_023_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_023"
+      },
+      {
+        "name": "easy_024_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_024"
+      },
+      {
+        "name": "easy_025_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_025"
+      },
+      {
+        "name": "easy_026_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_026"
+      },
+      {
+        "name": "easy_027_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_027"
+      },
+      {
+        "name": "easy_028_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_028"
+      },
+      {
+        "name": "easy_029_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_029"
+      },
+      {
+        "name": "easy_030_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_030"
+      },
+      {
+        "name": "easy_031_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_031"
+      },
+      {
+        "name": "easy_032_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_032"
+      },
+      {
+        "name": "easy_033_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_033"
+      },
+      {
+        "name": "easy_034_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_034"
+      },
+      {
+        "name": "easy_035_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_035"
+      },
+      {
+        "name": "easy_036_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_036"
+      },
+      {
+        "name": "easy_037_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_037"
+      },
+      {
+        "name": "easy_038_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_038"
+      },
+      {
+        "name": "easy_039_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_039"
+      },
+      {
+        "name": "easy_040_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_040"
+      },
+      {
+        "name": "easy_041_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_041"
+      },
+      {
+        "name": "easy_042_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_042"
+      },
+      {
+        "name": "easy_043_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_043"
+      },
+      {
+        "name": "easy_044_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_044"
+      },
+      {
+        "name": "easy_045_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_045"
+      },
+      {
+        "name": "easy_046_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_046"
+      },
+      {
+        "name": "easy_047_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_047"
+      },
+      {
+        "name": "easy_048_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_048"
+      },
+      {
+        "name": "easy_049_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_049"
+      },
+      {
+        "name": "easy_050_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_050"
+      },
+      {
+        "name": "easy_051_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_051"
+      },
+      {
+        "name": "easy_052_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_052"
+      },
+      {
+        "name": "easy_053_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_053"
+      },
+      {
+        "name": "easy_054_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_054"
+      },
+      {
+        "name": "easy_055_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_055"
+      },
+      {
+        "name": "easy_056_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_056"
+      },
+      {
+        "name": "easy_057_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_057"
+      },
+      {
+        "name": "easy_058_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_058"
+      },
+      {
+        "name": "easy_059_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_059"
+      },
+      {
+        "name": "easy_060_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_060"
+      },
+      {
+        "name": "easy_061_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_061"
+      },
+      {
+        "name": "easy_062_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_062"
+      },
+      {
+        "name": "easy_063_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_063"
+      },
+      {
+        "name": "easy_064_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_064"
+      },
+      {
+        "name": "easy_065_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_065"
+      },
+      {
+        "name": "easy_066_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_066"
+      },
+      {
+        "name": "easy_067_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_067"
+      },
+      {
+        "name": "easy_068_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_068"
+      },
+      {
+        "name": "easy_069_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_069"
+      },
+      {
+        "name": "easy_070_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_070"
+      },
+      {
+        "name": "easy_071_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_071"
+      },
+      {
+        "name": "easy_072_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_072"
+      },
+      {
+        "name": "easy_073_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_073"
+      },
+      {
+        "name": "easy_074_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_074"
+      },
+      {
+        "name": "easy_075_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_075"
+      },
+      {
+        "name": "easy_076_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_076"
+      },
+      {
+        "name": "easy_077_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_077"
+      },
+      {
+        "name": "easy_078_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_078"
+      },
+      {
+        "name": "easy_079_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_079"
+      },
+      {
+        "name": "easy_080_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_080"
+      },
+      {
+        "name": "easy_081_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_081"
+      },
+      {
+        "name": "easy_082_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_082"
+      },
+      {
+        "name": "easy_083_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_083"
+      },
+      {
+        "name": "easy_084_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_084"
+      },
+      {
+        "name": "easy_085_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_085"
+      },
+      {
+        "name": "easy_086_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_086"
+      },
+      {
+        "name": "easy_087_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_087"
+      },
+      {
+        "name": "easy_088_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_088"
+      },
+      {
+        "name": "easy_089_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_089"
+      },
+      {
+        "name": "easy_090_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_090"
+      },
+      {
+        "name": "easy_091_top_products_by_revenue",
+        "sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS revenue FROM sales GROUP BY product_name ORDER BY revenue DESC LIMIT 5; -- easy_091"
+      },
+      {
+        "name": "easy_092_null_email_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL; -- easy_092"
+      },
+      {
+        "name": "easy_093_active_expired_subscriptions",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < CURRENT_DATE; -- easy_093"
+      },
+      {
+        "name": "easy_094_restock_alerts",
+        "sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC; -- easy_094"
+      },
+      {
+        "name": "easy_095_negative_age_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0; -- easy_095"
+      },
+      {
+        "name": "easy_096_duplicate_users_simple",
+        "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1); -- easy_096"
+      },
+      {
+        "name": "easy_097_high_delinquent",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30; -- easy_097"
+      },
+      {
+        "name": "easy_098_orders_per_category",
+        "sql": "SELECT category, COUNT(*) AS c FROM order_items GROUP BY category ORDER BY c DESC; -- easy_098"
+      },
+      {
+        "name": "easy_099_avg_item_price_by_category",
+        "sql": "SELECT category, ROUND(AVG(unit_price), 2) AS avg_price FROM order_items GROUP BY category ORDER BY avg_price DESC; -- easy_099"
+      },
+      {
+        "name": "easy_100_conversion_revenue_total",
+        "sql": "SELECT ROUND(SUM(revenue), 2) AS total_revenue FROM conversions; -- easy_100"
+      }
+    ],
+    "hard": [
+      {
+        "name": "hard_001_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_001"
+      },
+      {
+        "name": "hard_002_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_002"
+      },
+      {
+        "name": "hard_003_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_003"
+      },
+      {
+        "name": "hard_004_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_004"
+      },
+      {
+        "name": "hard_005_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_005"
+      },
+      {
+        "name": "hard_006_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_006"
+      },
+      {
+        "name": "hard_007_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_007"
+      },
+      {
+        "name": "hard_008_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_008"
+      },
+      {
+        "name": "hard_009_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_009"
+      },
+      {
+        "name": "hard_010_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_010"
+      },
+      {
+        "name": "hard_011_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_011"
+      },
+      {
+        "name": "hard_012_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_012"
+      },
+      {
+        "name": "hard_013_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_013"
+      },
+      {
+        "name": "hard_014_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_014"
+      },
+      {
+        "name": "hard_015_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_015"
+      },
+      {
+        "name": "hard_016_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_016"
+      },
+      {
+        "name": "hard_017_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_017"
+      },
+      {
+        "name": "hard_018_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_018"
+      },
+      {
+        "name": "hard_019_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_019"
+      },
+      {
+        "name": "hard_020_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_020"
+      },
+      {
+        "name": "hard_021_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_021"
+      },
+      {
+        "name": "hard_022_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_022"
+      },
+      {
+        "name": "hard_023_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_023"
+      },
+      {
+        "name": "hard_024_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_024"
+      },
+      {
+        "name": "hard_025_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_025"
+      },
+      {
+        "name": "hard_026_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_026"
+      },
+      {
+        "name": "hard_027_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_027"
+      },
+      {
+        "name": "hard_028_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_028"
+      },
+      {
+        "name": "hard_029_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_029"
+      },
+      {
+        "name": "hard_030_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_030"
+      },
+      {
+        "name": "hard_031_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_031"
+      },
+      {
+        "name": "hard_032_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_032"
+      },
+      {
+        "name": "hard_033_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_033"
+      },
+      {
+        "name": "hard_034_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_034"
+      },
+      {
+        "name": "hard_035_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_035"
+      },
+      {
+        "name": "hard_036_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_036"
+      },
+      {
+        "name": "hard_037_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_037"
+      },
+      {
+        "name": "hard_038_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_038"
+      },
+      {
+        "name": "hard_039_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_039"
+      },
+      {
+        "name": "hard_040_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_040"
+      },
+      {
+        "name": "hard_041_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_041"
+      },
+      {
+        "name": "hard_042_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_042"
+      },
+      {
+        "name": "hard_043_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_043"
+      },
+      {
+        "name": "hard_044_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_044"
+      },
+      {
+        "name": "hard_045_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_045"
+      },
+      {
+        "name": "hard_046_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_046"
+      },
+      {
+        "name": "hard_047_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_047"
+      },
+      {
+        "name": "hard_048_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_048"
+      },
+      {
+        "name": "hard_049_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_049"
+      },
+      {
+        "name": "hard_050_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_050"
+      },
+      {
+        "name": "hard_051_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_051"
+      },
+      {
+        "name": "hard_052_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_052"
+      },
+      {
+        "name": "hard_053_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_053"
+      },
+      {
+        "name": "hard_054_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_054"
+      },
+      {
+        "name": "hard_055_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_055"
+      },
+      {
+        "name": "hard_056_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_056"
+      },
+      {
+        "name": "hard_057_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_057"
+      },
+      {
+        "name": "hard_058_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_058"
+      },
+      {
+        "name": "hard_059_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_059"
+      },
+      {
+        "name": "hard_060_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_060"
+      },
+      {
+        "name": "hard_061_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_061"
+      },
+      {
+        "name": "hard_062_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_062"
+      },
+      {
+        "name": "hard_063_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_063"
+      },
+      {
+        "name": "hard_064_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_064"
+      },
+      {
+        "name": "hard_065_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_065"
+      },
+      {
+        "name": "hard_066_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_066"
+      },
+      {
+        "name": "hard_067_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_067"
+      },
+      {
+        "name": "hard_068_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_068"
+      },
+      {
+        "name": "hard_069_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_069"
+      },
+      {
+        "name": "hard_070_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_070"
+      },
+      {
+        "name": "hard_071_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_071"
+      },
+      {
+        "name": "hard_072_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_072"
+      },
+      {
+        "name": "hard_073_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_073"
+      },
+      {
+        "name": "hard_074_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_074"
+      },
+      {
+        "name": "hard_075_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_075"
+      },
+      {
+        "name": "hard_076_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_076"
+      },
+      {
+        "name": "hard_077_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_077"
+      },
+      {
+        "name": "hard_078_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_078"
+      },
+      {
+        "name": "hard_079_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_079"
+      },
+      {
+        "name": "hard_080_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_080"
+      },
+      {
+        "name": "hard_081_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_081"
+      },
+      {
+        "name": "hard_082_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_082"
+      },
+      {
+        "name": "hard_083_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_083"
+      },
+      {
+        "name": "hard_084_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_084"
+      },
+      {
+        "name": "hard_085_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_085"
+      },
+      {
+        "name": "hard_086_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_086"
+      },
+      {
+        "name": "hard_087_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_087"
+      },
+      {
+        "name": "hard_088_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_088"
+      },
+      {
+        "name": "hard_089_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_089"
+      },
+      {
+        "name": "hard_090_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_090"
+      },
+      {
+        "name": "hard_091_rolling_7d_conversion_revenue",
+        "sql": "SELECT user_id, conversion_date, ROUND(SUM(revenue) OVER (PARTITION BY user_id ORDER BY conversion_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS rolling_7d_revenue FROM conversions ORDER BY user_id, conversion_date; -- hard_091"
+      },
+      {
+        "name": "hard_092_first_touch_channel_revenue_window",
+        "sql": "WITH ranked_sessions AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, SUM(revenue) AS rev FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.rev, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC; -- hard_092"
+      },
+      {
+        "name": "hard_093_duplicate_subscription_users_dense_rank",
+        "sql": "WITH d AS (SELECT user_id, DENSE_RANK() OVER (PARTITION BY user_id ORDER BY subscription_id) AS rk FROM subscriptions) SELECT COUNT(DISTINCT user_id) AS c FROM d WHERE rk > 1; -- hard_093"
+      },
+      {
+        "name": "hard_094_category_order_value_percentile",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), cat_orders AS (SELECT oi.category, o.order_id, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS orders, ROUND(AVG(order_total), 2) AS avg_order_value, ROUND(MAX(order_total), 2) AS max_order_value FROM cat_orders GROUP BY category ORDER BY avg_order_value DESC; -- hard_094"
+      },
+      {
+        "name": "hard_095_session_gap_by_user",
+        "sql": "WITH s AS (SELECT user_id, session_ts, LAG(session_ts) OVER (PARTITION BY user_id ORDER BY session_ts) AS prev_ts FROM sessions) SELECT user_id, session_ts, prev_ts FROM s WHERE prev_ts IS NOT NULL ORDER BY user_id, session_ts; -- hard_095"
+      },
+      {
+        "name": "hard_096_top_channel_share",
+        "sql": "WITH ch AS (SELECT channel, SUM(revenue) AS rev FROM conversions c JOIN sessions s ON c.user_id = s.user_id GROUP BY channel), t AS (SELECT SUM(rev) AS total_rev FROM ch) SELECT ch.channel, ROUND(100.0 * ch.rev / NULLIF(t.total_rev, 0), 2) AS revenue_share_pct FROM ch CROSS JOIN t ORDER BY revenue_share_pct DESC; -- hard_096"
+      },
+      {
+        "name": "hard_097_multi_step_order_report",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_rollup AS (SELECT oi.category, o.order_id, ot.order_total, SUM(oi.quantity) AS qty FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_rollup GROUP BY category ORDER BY total_orders DESC; -- hard_097"
+      },
+      {
+        "name": "hard_098_anomaly_ranked_customers",
+        "sql": "WITH c AS (SELECT customer_id, status, email, age, CASE WHEN email IS NULL OR age < 0 OR LOWER(status) NOT IN ('active','inactive','pending') THEN 1 ELSE 0 END AS is_bad FROM customers), r AS (SELECT customer_id, status, is_bad, ROW_NUMBER() OVER (PARTITION BY status ORDER BY customer_id) AS rn FROM c WHERE is_bad = 1) SELECT status, COUNT(*) AS bad_rows, MAX(rn) AS max_rank FROM r GROUP BY status ORDER BY bad_rows DESC; -- hard_098"
+      },
+      {
+        "name": "hard_099_latest_subscription_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, status, end_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY end_date DESC) AS rn FROM subscriptions) SELECT status, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY status ORDER BY users DESC; -- hard_099"
+      },
+      {
+        "name": "hard_100_cohort_month_revenue",
+        "sql": "WITH first_conversion AS (SELECT user_id, MIN(conversion_date) AS cohort_date FROM conversions GROUP BY user_id) SELECT strftime('%Y-%m', fc.cohort_date) AS cohort_month, ROUND(SUM(c.revenue), 2) AS revenue FROM first_conversion fc JOIN conversions c ON fc.user_id = c.user_id GROUP BY cohort_month ORDER BY cohort_month; -- hard_100"
+      }
+    ],
+    "medium": [
+      {
+        "name": "medium_001_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_001"
+      },
+      {
+        "name": "medium_002_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_002"
+      },
+      {
+        "name": "medium_003_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_003"
+      },
+      {
+        "name": "medium_004_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_004"
+      },
+      {
+        "name": "medium_005_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_005"
+      },
+      {
+        "name": "medium_006_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_006"
+      },
+      {
+        "name": "medium_007_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_007"
+      },
+      {
+        "name": "medium_008_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_008"
+      },
+      {
+        "name": "medium_009_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_009"
+      },
+      {
+        "name": "medium_010_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_010"
+      },
+      {
+        "name": "medium_011_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_011"
+      },
+      {
+        "name": "medium_012_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_012"
+      },
+      {
+        "name": "medium_013_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_013"
+      },
+      {
+        "name": "medium_014_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_014"
+      },
+      {
+        "name": "medium_015_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_015"
+      },
+      {
+        "name": "medium_016_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_016"
+      },
+      {
+        "name": "medium_017_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_017"
+      },
+      {
+        "name": "medium_018_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_018"
+      },
+      {
+        "name": "medium_019_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_019"
+      },
+      {
+        "name": "medium_020_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_020"
+      },
+      {
+        "name": "medium_021_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_021"
+      },
+      {
+        "name": "medium_022_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_022"
+      },
+      {
+        "name": "medium_023_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_023"
+      },
+      {
+        "name": "medium_024_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_024"
+      },
+      {
+        "name": "medium_025_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_025"
+      },
+      {
+        "name": "medium_026_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_026"
+      },
+      {
+        "name": "medium_027_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_027"
+      },
+      {
+        "name": "medium_028_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_028"
+      },
+      {
+        "name": "medium_029_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_029"
+      },
+      {
+        "name": "medium_030_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_030"
+      },
+      {
+        "name": "medium_031_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_031"
+      },
+      {
+        "name": "medium_032_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_032"
+      },
+      {
+        "name": "medium_033_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_033"
+      },
+      {
+        "name": "medium_034_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_034"
+      },
+      {
+        "name": "medium_035_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_035"
+      },
+      {
+        "name": "medium_036_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_036"
+      },
+      {
+        "name": "medium_037_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_037"
+      },
+      {
+        "name": "medium_038_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_038"
+      },
+      {
+        "name": "medium_039_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_039"
+      },
+      {
+        "name": "medium_040_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_040"
+      },
+      {
+        "name": "medium_041_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_041"
+      },
+      {
+        "name": "medium_042_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_042"
+      },
+      {
+        "name": "medium_043_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_043"
+      },
+      {
+        "name": "medium_044_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_044"
+      },
+      {
+        "name": "medium_045_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_045"
+      },
+      {
+        "name": "medium_046_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_046"
+      },
+      {
+        "name": "medium_047_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_047"
+      },
+      {
+        "name": "medium_048_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_048"
+      },
+      {
+        "name": "medium_049_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_049"
+      },
+      {
+        "name": "medium_050_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_050"
+      },
+      {
+        "name": "medium_051_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_051"
+      },
+      {
+        "name": "medium_052_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_052"
+      },
+      {
+        "name": "medium_053_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_053"
+      },
+      {
+        "name": "medium_054_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_054"
+      },
+      {
+        "name": "medium_055_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_055"
+      },
+      {
+        "name": "medium_056_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_056"
+      },
+      {
+        "name": "medium_057_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_057"
+      },
+      {
+        "name": "medium_058_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_058"
+      },
+      {
+        "name": "medium_059_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_059"
+      },
+      {
+        "name": "medium_060_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_060"
+      },
+      {
+        "name": "medium_061_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_061"
+      },
+      {
+        "name": "medium_062_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_062"
+      },
+      {
+        "name": "medium_063_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_063"
+      },
+      {
+        "name": "medium_064_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_064"
+      },
+      {
+        "name": "medium_065_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_065"
+      },
+      {
+        "name": "medium_066_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_066"
+      },
+      {
+        "name": "medium_067_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_067"
+      },
+      {
+        "name": "medium_068_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_068"
+      },
+      {
+        "name": "medium_069_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_069"
+      },
+      {
+        "name": "medium_070_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_070"
+      },
+      {
+        "name": "medium_071_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_071"
+      },
+      {
+        "name": "medium_072_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_072"
+      },
+      {
+        "name": "medium_073_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_073"
+      },
+      {
+        "name": "medium_074_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_074"
+      },
+      {
+        "name": "medium_075_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_075"
+      },
+      {
+        "name": "medium_076_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_076"
+      },
+      {
+        "name": "medium_077_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_077"
+      },
+      {
+        "name": "medium_078_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_078"
+      },
+      {
+        "name": "medium_079_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_079"
+      },
+      {
+        "name": "medium_080_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_080"
+      },
+      {
+        "name": "medium_081_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_081"
+      },
+      {
+        "name": "medium_082_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_082"
+      },
+      {
+        "name": "medium_083_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_083"
+      },
+      {
+        "name": "medium_084_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_084"
+      },
+      {
+        "name": "medium_085_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_085"
+      },
+      {
+        "name": "medium_086_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_086"
+      },
+      {
+        "name": "medium_087_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_087"
+      },
+      {
+        "name": "medium_088_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_088"
+      },
+      {
+        "name": "medium_089_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_089"
+      },
+      {
+        "name": "medium_090_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_090"
+      },
+      {
+        "name": "medium_091_status_anomaly_pct",
+        "sql": "SELECT status, ROUND(100.0 * SUM(CASE WHEN email IS NULL OR age < 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0), 2) AS anomaly_pct FROM customers GROUP BY status ORDER BY anomaly_pct DESC; -- medium_091"
+      },
+      {
+        "name": "medium_092_channel_users_revenue",
+        "sql": "SELECT s.channel, COUNT(DISTINCT s.user_id) AS users, ROUND(SUM(COALESCE(c.revenue, 0)), 2) AS revenue FROM sessions s LEFT JOIN conversions c ON s.user_id = c.user_id GROUP BY s.channel ORDER BY revenue DESC; -- medium_092"
+      },
+      {
+        "name": "medium_093_order_totals_cte",
+        "sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT ROUND(AVG(order_total), 2) AS avg_order_total, ROUND(MAX(order_total), 2) AS max_order_total FROM order_totals; -- medium_093"
+      },
+      {
+        "name": "medium_094_first_session_per_user",
+        "sql": "WITH ranked AS (SELECT user_id, channel, session_ts, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions) SELECT channel, COUNT(*) AS users FROM ranked WHERE rn = 1 GROUP BY channel ORDER BY users DESC; -- medium_094"
+      },
+      {
+        "name": "medium_095_invalid_status_count",
+        "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending'); -- medium_095"
+      },
+      {
+        "name": "medium_096_autopay_cancel_mismatch",
+        "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1; -- medium_096"
+      },
+      {
+        "name": "medium_097_category_units_and_orders",
+        "sql": "SELECT oi.category, COUNT(DISTINCT oi.order_id) AS orders, SUM(oi.quantity) AS units FROM order_items oi GROUP BY oi.category ORDER BY orders DESC; -- medium_097"
+      },
+      {
+        "name": "medium_098_daily_revenue",
+        "sql": "SELECT conversion_date, ROUND(SUM(revenue), 2) AS daily_revenue FROM conversions GROUP BY conversion_date ORDER BY conversion_date; -- medium_098"
+      },
+      {
+        "name": "medium_099_subscription_status_mix",
+        "sql": "SELECT status, COUNT(*) AS c FROM subscriptions GROUP BY status ORDER BY c DESC; -- medium_099"
+      },
+      {
+        "name": "medium_100_customer_domain_distribution",
+        "sql": "SELECT LOWER(SUBSTR(email, INSTR(email, '@') + 1)) AS domain, COUNT(*) AS c FROM customers WHERE email IS NOT NULL GROUP BY domain ORDER BY c DESC; -- medium_100"
+      }
+    ]
+  },
+  "deterministic": {
+    "fix_broken_query": {
+      "type": "fixed",
+      "submit_key": "rows",
+      "primary_sql": "SELECT product_name, ROUND(SUM(price * quantity), 2) AS total_revenue FROM sales GROUP BY product_name ORDER BY total_revenue DESC LIMIT 5;",
+      "hard_variants": [
+        "WITH p AS (SELECT product_name, ROUND(SUM(price * quantity), 2) AS total_revenue FROM sales GROUP BY product_name) SELECT product_name, total_revenue FROM p ORDER BY total_revenue DESC, product_name ASC LIMIT 5;",
+        "SELECT product_name, ROUND(SUM(price * quantity), 2) AS total_revenue FROM sales GROUP BY product_name ORDER BY total_revenue DESC;"
+      ]
+    },
+    "inventory_restock_alerts": {
+      "type": "fixed",
+      "submit_key": "rows",
+      "primary_sql": "SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC, product_name ASC;",
+      "hard_variants": [
+        "SELECT product_name, stock_on_hand, reorder_level, CASE WHEN stock_on_hand <= reorder_level THEN (reorder_level - stock_on_hand) ELSE 0 END AS deficit_units FROM inventory WHERE stock_on_hand <= reorder_level ORDER BY deficit_units DESC;",
+        "WITH s AS (SELECT product_name, stock_on_hand, reorder_level, (reorder_level - stock_on_hand) AS deficit_units FROM inventory) SELECT * FROM s WHERE deficit_units >= 0 ORDER BY deficit_units DESC, product_name ASC;"
+      ]
+    },
+    "find_data_anomalies": {
+      "type": "count_dict",
+      "queries": [
+        {
+          "key": "null_email_count",
+          "sql": "SELECT COUNT(*) AS c FROM customers WHERE email IS NULL;"
+        },
+        {
+          "key": "duplicate_customer_id_count",
+          "sql": "SELECT COUNT(*) AS c FROM (SELECT customer_id FROM customers GROUP BY customer_id HAVING COUNT(*) > 1);"
+        },
+        {
+          "key": "negative_age_count",
+          "sql": "SELECT COUNT(*) AS c FROM customers WHERE age < 0;"
+        },
+        {
+          "key": "invalid_status_count",
+          "sql": "SELECT COUNT(*) AS c FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending');"
+        }
+      ]
+    },
+    "detect_subscription_issues": {
+      "type": "count_dict",
+      "queries": [
+        {
+          "key": "expired_active_count",
+          "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='active' AND end_date < '2024-02-01';"
+        },
+        {
+          "key": "delinquent_count",
+          "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE last_payment_days_ago > 30;"
+        },
+        {
+          "key": "autopay_mismatch_count",
+          "sql": "SELECT COUNT(*) AS c FROM subscriptions WHERE status='canceled' AND autopay_enabled=1;"
+        },
+        {
+          "key": "duplicate_user_count",
+          "sql": "SELECT COUNT(*) AS c FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1);"
+        }
+      ]
+    },
+    "repair_data_pipeline": {
+      "type": "fixed",
+      "submit_key": "report",
+      "primary_sql": "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT oi.category, COUNT(DISTINCT o.order_id) AS total_orders, SUM(oi.quantity) AS total_units_sold, ROUND(AVG(ot.order_total), 2) AS avg_order_value FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category ORDER BY total_orders DESC;",
+      "hard_variants": [
+        "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id), category_orders AS (SELECT oi.category, o.order_id, SUM(oi.quantity) AS qty, ot.order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category, o.order_id, ot.order_total) SELECT category, COUNT(*) AS total_orders, SUM(qty) AS total_units_sold, ROUND(AVG(order_total), 2) AS avg_order_value FROM category_orders GROUP BY category ORDER BY total_orders DESC;",
+        "WITH order_totals AS (SELECT order_id, SUM(quantity * unit_price) AS order_total FROM order_items GROUP BY order_id) SELECT oi.category, COUNT(DISTINCT o.order_id) AS total_orders, SUM(oi.quantity) AS total_units_sold, ROUND(AVG(ot.order_total), 2) AS avg_order_value FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN order_totals ot ON o.order_id = ot.order_id GROUP BY oi.category ORDER BY avg_order_value DESC;"
+      ]
+    },
+    "multi_channel_attribution": {
+      "type": "fixed",
+      "submit_key": "report",
+      "primary_sql": "WITH first_touch AS (SELECT s.user_id, s.channel FROM sessions s JOIN (SELECT user_id, MIN(session_ts) AS first_ts FROM sessions GROUP BY user_id) m ON s.user_id = m.user_id AND s.session_ts = m.first_ts), user_revenue AS (SELECT user_id, ROUND(SUM(revenue), 2) AS total_revenue FROM conversions GROUP BY user_id) SELECT ft.channel, COUNT(ft.user_id) AS users, ROUND(SUM(COALESCE(ur.total_revenue, 0)), 2) AS total_revenue FROM first_touch ft LEFT JOIN user_revenue ur ON ft.user_id = ur.user_id GROUP BY ft.channel ORDER BY total_revenue DESC, ft.channel ASC;",
+      "hard_variants": [
+        "WITH ranked_sessions AS (SELECT user_id, channel, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY session_ts) AS rn FROM sessions), user_revenue AS (SELECT user_id, ROUND(SUM(revenue), 2) AS total_revenue FROM conversions GROUP BY user_id) SELECT rs.channel, COUNT(*) AS users, ROUND(SUM(COALESCE(ur.total_revenue, 0)), 2) AS total_revenue FROM ranked_sessions rs LEFT JOIN user_revenue ur ON rs.user_id = ur.user_id WHERE rs.rn = 1 GROUP BY rs.channel ORDER BY total_revenue DESC, rs.channel ASC;",
+        "WITH first_touch AS (SELECT s.user_id, s.channel FROM sessions s JOIN (SELECT user_id, MIN(session_ts) AS first_ts FROM sessions GROUP BY user_id) m ON s.user_id = m.user_id AND s.session_ts = m.first_ts), user_revenue AS (SELECT user_id, ROUND(SUM(revenue), 2) AS total_revenue FROM conversions GROUP BY user_id) SELECT ft.channel, COUNT(ft.user_id) AS users, ROUND(AVG(COALESCE(ur.total_revenue, 0)), 2) AS total_revenue FROM first_touch ft LEFT JOIN user_revenue ur ON ft.user_id = ur.user_id GROUP BY ft.channel ORDER BY total_revenue DESC;"
+      ]
+    }
+  }
+}

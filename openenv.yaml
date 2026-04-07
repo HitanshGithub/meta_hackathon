@@ -1,0 +1,50 @@
+spec_version: "1"
+name: sql-data-analyst-env
+description: >
+  An OpenEnv environment where AI agents act as data analysts.
+  They must analyze SQLite databases, fix broken SQL queries,
+  detect data quality anomalies, and repair multi-step data pipelines.
+  Six tasks spanning easy, medium, and hard difficulty.
+author: hackathon-submission
+runtime: docker
+app: server.app:app
+port: 7860
+tasks:
+  - id: fix_broken_query
+    name: Fix the Broken Query
+    difficulty: easy
+    description: >
+      Fix a SQL query containing 3 syntax errors and submit top products by revenue.
+  - id: inventory_restock_alerts
+    name: Inventory Restock Alerts
+    difficulty: easy
+    description: >
+      Identify SKUs below reorder threshold and submit deficit-ranked restock rows.
+  - id: find_data_anomalies
+    name: Find Data Anomalies
+    difficulty: medium
+    description: >
+      Count null emails, duplicate IDs, negative ages, and invalid statuses.
+  - id: detect_subscription_issues
+    name: Detect Subscription Issues
+    difficulty: medium
+    description: >
+      Compute lifecycle issue counts across expiration, delinquency, autopay mismatch, and duplicate users.
+  - id: repair_data_pipeline
+    name: Repair the Data Pipeline
+    difficulty: hard
+    description: >
+      Fix a broken JOIN aggregation and submit accurate category-level metrics.
+  - id: multi_channel_attribution
+    name: Multi-channel Attribution
+    difficulty: hard
+    description: >
+      Build first-touch attribution by channel using sessions and conversions.
+tags:
+  - openenv
+  - sql
+  - data-analysis
+  - data-quality
+  - data-pipeline
+  - attribution
+  - real-world
