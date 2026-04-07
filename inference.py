@@ -78,21 +78,16 @@ def _json_preview(value: Any, limit: int = 180) -> str:
 
 
 def log_start(task: str, env: str, model: str) -> None:
-    print(f"\n=== TASK {task} ===", flush=True)
-    print(f"env={env} model={model}", flush=True)
+    print(f"[START] task={task} env={env} model={model}", flush=True)
 
 
 def log_step(step: int, action: Dict[str, Any], reward: float, done: bool, error: Optional[str]) -> None:
+    compact_action = json.dumps(action, separators=(",", ":"), ensure_ascii=True, default=str)
+    err = "" if not error else _clip(str(error), limit=220)
     print(
-        f"[STEP {step:02d}] action={action.get('action_type', 'noop')} reward={reward:.4f} done={str(done).lower()}",
+        f"[STEP] step={step} action={compact_action} reward={reward:.4f} done={str(done).lower()} error={err}",
         flush=True,
     )
-    if action.get("sql_query"):
-        print(f"          sql={_clip(str(action['sql_query']))}", flush=True)
-    if action.get("answer") is not None:
-        print(f"          answer={_json_preview(action['answer'])}", flush=True)
-    if error:
-        print(f"          error={_clip(str(error), limit=220)}", flush=True)
 
 
 def log_end(success: bool, steps: int, score: float, rewards: List[float]) -> None:

@@ -1,3 +1,12 @@
+---
+title: SqlBenchmarking
+emoji: "🧠"
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # SQL Data Analyst Environment
 
 An OpenEnv-compatible environment where agents solve practical SQL/data-ops workflows over SQLite.
