@@ -16,6 +16,8 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from models import SQLAction, SQLObservation, SQLState
 
+GRADER_VERSION = "2026-04-08.sql-backed.v2"
+
 
 # ---------------------------------------------------------------------------
 # Task definitions
@@ -385,10 +387,18 @@ def _grade_find_data_anomalies(answer: Optional[Dict[str, Any]], conn: sqlite3.C
         return 0.0, "No answer submitted."
 
     expected = {
-        "null_email_count": 3,
-        "duplicate_customer_id_count": 2,
-        "negative_age_count": 2,
-        "invalid_status_count": 2,
+        "null_email_count": int(conn.execute("SELECT COUNT(*) FROM customers WHERE email IS NULL").fetchone()[0]),
+        "duplicate_customer_id_count": int(
+            conn.execute(
+                "SELECT COUNT(*) FROM (SELECT customer_id FROM customers GROUP BY customer_id HAVING COUNT(*) > 1)"
+            ).fetchone()[0]
+        ),
+        "negative_age_count": int(conn.execute("SELECT COUNT(*) FROM customers WHERE age < 0").fetchone()[0]),
+        "invalid_status_count": int(
+            conn.execute(
+                "SELECT COUNT(*) FROM customers WHERE LOWER(status) NOT IN ('active','inactive','pending')"
+            ).fetchone()[0]
+        ),
     }
     score = 0.0
     feedback = []
@@ -411,10 +421,22 @@ def _grade_detect_subscription_issues(answer: Optional[Dict[str, Any]], conn: sq
         return 0.0, "No answer submitted."
 
     expected = {
-        "expired_active_count": 3,
-        "delinquent_count": 4,
-        "autopay_mismatch_count": 1,
-        "duplicate_user_count": 1,
+        "expired_active_count": int(
+            conn.execute(
+                "SELECT COUNT(*) FROM subscriptions WHERE status='active' AND end_date < '2024-02-01'"
+            ).fetchone()[0]
+        ),
+        "delinquent_count": int(
+            conn.execute("SELECT COUNT(*) FROM subscriptions WHERE last_payment_days_ago > 30").fetchone()[0]
+        ),
+        "autopay_mismatch_count": int(
+            conn.execute("SELECT COUNT(*) FROM subscriptions WHERE status='canceled' AND autopay_enabled=1").fetchone()[0]
+        ),
+        "duplicate_user_count": int(
+            conn.execute(
+                "SELECT COUNT(*) FROM (SELECT user_id FROM subscriptions GROUP BY user_id HAVING COUNT(*) > 1)"
+            ).fetchone()[0]
+        ),
     }
     score = 0.0
     feedback = []
@@ -676,6 +698,9 @@ class SQLDataAnalystEnv:
                 self._state.done = True
                 info["grade_feedback"] = feedback
                 info["final_score"] = score
+                info["grader_version"] = GRADER_VERSION
+                info["grader_deterministic"] = True
+                info["task_difficulty"] = self._task_cfg["difficulty"]
 
         elif action.action_type == "noop":
             reward = -0.01

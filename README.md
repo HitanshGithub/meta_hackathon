@@ -48,6 +48,16 @@ An OpenEnv-compatible environment where agents solve practical SQL/data-ops work
 - `-0.01` `noop`
 - `submit_answer` reward = grader score `[0.0, 1.0]`
 
+## Evaluation Rigor
+
+- Graders are deterministic and task-bounded per episode.
+- Medium-task expected values are SQL-derived from the live episode DB (not magic constants).
+- Submit response includes grader metadata:
+  - `grader_version`
+  - `grader_deterministic`
+  - `task_difficulty`
+- Scoring is normalized to `[0.0, 1.0]` with partial credit where appropriate.
+
 ## Run Locally
 
 ```bash
@@ -89,4 +99,10 @@ docker run -p 7860:7860 sql-data-analyst-env
 ```bash
 pip install openenv-core
 openenv validate
+```
+
+Determinism sanity test:
+
+```bash
+python -m unittest tests/test_grader_determinism.py
 ```
