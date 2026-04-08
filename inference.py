@@ -15,11 +15,12 @@ from openai import OpenAI
 
 load_dotenv()
 
-API_BASE_URL: str = os.environ.get("API_BASE_URL", "https://router.huggingface.co/v1")
-API_KEY: str = os.environ.get("API_KEY", os.environ.get("HF_TOKEN", ""))
+API_BASE_URL: str = os.environ["API_BASE_URL"]
+API_KEY: str = os.environ["API_KEY"]
 MODEL_NAME: str = os.environ.get("MODEL_NAME", "meta-llama/Llama-3.1-8B-Instruct:novita")
 ENV_BASE_URL: str = os.environ.get("ENV_BASE_URL", "http://localhost:7860")
 USE_LLM_AGENT: bool = os.environ.get("USE_LLM_AGENT", "1").strip() in {"1", "true", "True"}
+PROXY_PING_REQUIRED: bool = os.environ.get("PROXY_PING_REQUIRED", "1").strip() in {"1", "true", "True"}
 
 MAX_STEPS: int = 26
 TASK_IDS: List[str] = [
@@ -38,7 +39,7 @@ MEDIUM_EXAMPLE_RATIO: float = float(os.environ.get("MEDIUM_EXAMPLE_RATIO", "0.2"
 DETERMINISTIC_HARD_QUERY_RATE: float = float(os.environ.get("DETERMINISTIC_HARD_QUERY_RATE", "0.35"))
 TRAINING_QUERY_PATH: str = os.environ.get("TRAINING_QUERY_PATH", "training_queries.json")
 
-client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY or "dummy")
+client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
 
 SYSTEM_PROMPT = """You are an expert SQL data analyst agent.
 Respond ONLY with compact JSON: {"action_type":"...","sql_query":"...","answer":{...}}
@@ -190,21 +191,15 @@ def llm_action(observation: Dict[str, Any], history: List[str]) -> Dict[str, Any
 
 
 def ping_llm_proxy() -> None:
-    """Best-effort probe to ensure the configured proxy receives at least one request."""
+    """Ensure at least one request is sent through the configured LLM proxy."""
     try:
-        client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[
-                {"role": "system", "content": "Respond with OK"},
-                {"role": "user", "content": "ping"},
-            ],
-            temperature=0.0,
-            max_tokens=4,
-            stream=False,
-        )
-    except Exception:
-        # Non-fatal: main task execution should still continue.
-        pass
+        # More robust than a model-specific completion call.
+        client.models.list()
+        print("[INFO] proxy_ping=ok", flush=True)
+    except Exception as exc:
+        print(f"[ERROR] proxy_ping_failed={exc}", flush=True)
+        if PROXY_PING_REQUIRED:
+            raise
 
 
 def execute_and_log(step_no: int, action: Dict[str, Any], rewards: List[float]) -> Dict[str, Any]:
@@ -340,7 +335,11 @@ def main() -> None:
     print(f"API:   {API_BASE_URL}", flush=True)
     print(f"Mode:  {'LLM' if USE_LLM_AGENT else 'deterministic'}", flush=True)
     print(f"Training Queries: {TRAINING_QUERY_PATH}", flush=True)
-    ping_llm_proxy()
+    try:
+        ping_llm_proxy()
+    except Exception as exc:
+        print(f"ERROR: LLM proxy validation failed: {exc}", flush=True)
+        sys.exit(1)
 
     total_start = time.time()
     scores: Dict[str, float] = {}
